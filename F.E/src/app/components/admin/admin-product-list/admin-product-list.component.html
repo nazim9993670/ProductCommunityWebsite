@@ -1,0 +1,56 @@
+<!-- Product List for Admin HTML -->
+<br>
+<h4><a routerLink="/admin-dashboard">
+        <mat-icon>reply</mat-icon>Back to Dashboard
+    </a></h4>
+<div class="container">
+    <form class="form my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search by Brand, Name or Code"
+            formControlName="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
+    </form>
+    <!-- <div class="left">
+        <form [formGroup]="filter" (ngSubmit)="filterSearch()">
+            <article class="filter-group">
+                <header class="card-header">
+                    <h5>Filter by Brand</h5>
+                </header>
+                <article class="filter-group">
+                    <div class="card-body">
+                        <select class="dropdown" formControlName="brand">
+                            <option value="" disabled selected hidden>Select Brand</option>
+                            <option *ngFor="let br of brands" [value]='br'>
+                                {{br}}</option>
+                        </select>
+                    </div>
+                </article>
+            </article>
+            <button id="submit" type="submit" class="btn btn-primary">Filter</button>
+        </form>
+    </div> -->
+    <div class="right">
+        <h1>Product List</h1>
+        <table class="table table-sm table-hover table-bordered border-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">BRAND</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">CODE</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.productBrand}}</td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td><a class="btn btn-outline-primary bg-transparent btn-sm" id="editBtn"
+                            routerLink="/admin-viewProduct/{{product.productId}}">DETAILS</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

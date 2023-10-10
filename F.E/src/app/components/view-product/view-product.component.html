@@ -1,0 +1,77 @@
+<!-- View Product Details Page HTML -->
+<div class="card mt-4" id="card-product">
+    <div class="card-header">
+        <h1>PRODUCT DETAILS</h1>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">Brand : {{productBrand}}</h3>
+        <h3 class="card-title">Name : {{productName}}</h3>
+        <h3 class="card-title">Code : {{productCode}}</h3>
+        <h3 class="card-title">Price : {{productPrice}}</h3>
+        <h3 class="card-title">Seller: {{productSeller}}</h3>
+        <h3 class="card-title">Average Rating: {{averageRating}}</h3>
+        <h3 class="card-title">Total Reviews: {{totalReviews}}</h3>
+        <hr>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/post-review/{{productId}}">Post
+            a Review</button>
+    </div>
+</div>
+<br>
+<div class="card card-outline-secondary my-4" id="card-reviews">
+    <div class="card-header">
+        <h1>Reviews and Ratings</h1>
+    </div>
+    <div class="card-body">
+        <div *ngIf="isReviewNotPresent; then reviewsNotPresent else reviewsPresent"></div>
+        <ng-template #reviewsNotPresent>
+            <table class="table table-sm table-hover table-bordered border-dark table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+            <h3 class="unavailable">No Reviews Yet.</h3>
+        </ng-template>
+        <ng-template #reviewsPresent>
+            <table class="table table-sm table-hover table-bordered border-dark table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let review of reviews">
+                        <td>
+                            <h3 class="rev">{{review.title}}</h3>
+                        </td>
+                        <td>
+                            <h3 class="rev">{{review.description}}</h3>
+                        </td>
+                        <td>
+                            <ng-template #t let-fill="fill">
+                                <span class="star" [class.full]="fill === 100">
+                                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                                </span>
+                            </ng-template>
+                            <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" [max]="5">
+                            </ngb-rating>
+                        </td>
+                        <td>
+                            <h3 class="rev">{{review.status}}</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </div>
+</div>

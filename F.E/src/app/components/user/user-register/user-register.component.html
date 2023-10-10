@@ -1,0 +1,38 @@
+<!-- User Register HTML Form -->
+<div class="login-reg-panel">
+    <form ngNativeValidate [formGroup]="registerForm">
+        <div class="login-panel">
+            <br>
+            <h4 mt-4>User Register</h4>
+            <small class="para">
+                    </small>
+
+            <input calss="frm" type="text" placeholder="Full Name" name="fullname" formControlName="fullname" required>
+            <div id="validate"
+                *ngIf="registerForm.get('fullname')?.invalid && (registerForm.get('fullname')?.dirty || registerForm.get('fullname')?.touched)">
+                Please provide a valid name.
+            </div>
+            <input type="text" placeholder="Username" name="username" formControlName="username" required>
+            <div id="validate"
+                *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                Username length: Min length: 5, Max length: 15
+            </div>
+            <span *ngIf="registerForm.get('username')?.hasError('usernameTaken')">
+                Username is already taken...
+            </span>
+            <input type="email" placeholder="Email" name="email" formControlName="email" required>
+            <div id="validate"
+                *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                Enter valid email address.
+            </div>
+            <input type="password" placeholder="Password" name="password" formControlName="password" required>
+            <div id="validate"
+                *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                Password must contain more than 6 characters, 1 upper case letter, and 1 special character.
+            </div>
+            <button type="submit" class="btn1 btn-outline-light btn-lg" value="login" (click)="onSubmit()"
+                [disabled]="registerForm.invalid">Register</button>
+        </div>
+        <div class="register-info-box"></div>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+/* Select Account Page CSS */
+h2 {
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+
+}
+
+.login-reg-panel {
+    position: fixed;
+    top: 54%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 45%;
+    height: 30%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 270px;
+    background-color: cornflowerblue;
+    opacity: 0.8;
+    border: 2px solid #151414;
+    box-shadow: none;
+    color: #000;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px 9px #f2eded2b;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+
+}
+
+.login-reg-panel {
+    color: black;
+}
+
+.btn-user {
+    margin-left: 1%;
+}
+
+.btn-admin {
+    margin-left: 8%;
+}
+
+.userimg {
+    margin-left: 1%;
+}
+
+.adminimg {
+    margin-left: 8%;
+}

@@ -1,0 +1,53 @@
+<!-- Post Review Page for User HTML -->
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Write a Review</h3>
+                    <p>Fill in the data below.</p>
+                    <form [formGroup]="ratingForm" ngNativeValidate #form>
+                        <div class=" d-flex justify-content-center mt-200">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="stars">
+                                        <input class="star star-5" id="star-5" type="radio" formControlName="rating"
+                                            value="5" />
+                                        <label class="star star-5" for="star-5"></label>
+                                        <input class="star star-4" id="star-4" type="radio" formControlName="rating"
+                                            value="4" />
+                                        <label class="star star-4" for="star-4"></label>
+                                        <input class="star star-3" id="star-3" type="radio" nformControlName="rating"
+                                            value="3" />
+                                        <label class="star star-3" for="star-3"></label>
+                                        <input class="star star-2" id="star-2" type="radio" formControlName="rating"
+                                            value="2" />
+                                        <label class="star star-2" for="star-2"></label>
+                                        <input class="star star-1" id="star-1" type="radio" formControlName="rating"
+                                            value="1" />
+                                        <label class="star star-1" for="star-1"></label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" formControlName="title" placeholder="Title"
+                                required>
+
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <textarea class="form-control" type="text" formControlName="description" placeholder="Write your review here....   (min. 20 characters and max 400 characters)
+                            " required></textarea>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary"
+                                (click)="form.checkValidity() ? onSubmit(): null">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

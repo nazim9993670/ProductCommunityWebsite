@@ -1,0 +1,71 @@
+/* Website Home Page CSS */
+.center {
+    display: inline-block;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 65px;
+}
+
+label {
+    color: black;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 40px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+}
+
+.home-panel {
+    position: fixed;
+    margin-top: -350px;
+    transform: translateY(-38%);
+    text-align: center;
+    width: 140%;
+    right: 0;
+    left: 0;
+    
+    height: 190px;
+    background-color: cornflowerblue;
+    opacity: 0.6;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 9px #0a0a0a47;
+    border: 8px solid cornflowerblue;
+    /* background-image: url("/assets/images/card.jpg"); */
+}
+
+.homs-reg-panel {
+    color: #070707;
+}
+
+.card {
+    margin-top: 30px;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+    width: 700px;
+    margin-left: 135px;
+}
+
+.bg-image {
+    background-image: url(data:image/jpeg;base64,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);
+    height: 600px;
+}
+
+h4 {
+    margin-top: 6px;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 930px;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+
+}

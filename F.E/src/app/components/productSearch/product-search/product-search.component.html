@@ -1,0 +1,68 @@
+<!-- Searched Product Result Page HTML -->
+<div class="container">
+    <!-- Filter by Brand -->
+    <div class="left">
+        <form [formGroup]="filter" (ngSubmit)="filterSearch()">
+            <article class="filter-group">
+                <header class="card-header">
+                    <h5>Filter by Brand</h5>
+                </header>
+                <article class="filter-group">
+                    <div class="card-body">
+                        <select class="dropdown" formControlName="brand">
+                            <option value="" disabled selected hidden>Select Brand</option>
+                            <option *ngFor="let brand of brands" [value]='brand'>
+                                {{brand}}</option>
+                        </select>
+                    </div>
+                </article>
+
+            </article>
+            <button id="submit" type="submit" class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+    <!-- Searched Product List -->
+    <div class="right">
+        <h1>Searched Product</h1>
+
+        <div *ngIf="productFound; then productFoundPage else productNotFoundPage"></div>
+        <ng-template #productFoundPage>
+            <table class="table table-sm table-hover table-bordered table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">BRAND</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">CODE</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.productBrand}}</td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.productPrice}}</td>
+                        <td><a class="btn btn-outline-primary bg-transparent btn-sm" id="editBtn"
+                                routerLink="/view-product/{{product.productId}}">DETAILS</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+        <ng-template #productNotFoundPage>
+            <table class="table table-sm table-hover table-bordered table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">BRAND</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">CODE</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">ACTION</th>
+                    </tr>
+                </thead>
+            </table>
+            <h3 class="unavailable">No Product is available.</h3>
+        </ng-template>
+    </div>
+</div>

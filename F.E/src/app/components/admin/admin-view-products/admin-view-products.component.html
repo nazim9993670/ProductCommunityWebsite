@@ -1,0 +1,90 @@
+<!-- View Product HTML -->
+<div class="card mt-4" id="card-product">
+    <div class="card-header">
+        <h4><a routerLink="/admin-products">
+                <mat-icon>reply</mat-icon>Back to Product List
+            </a>
+        </h4>
+        <h1>PRODUCT DETAILS</h1>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Brand : {{productBrand}}</h5>
+        <h5 class="card-title">Name : {{productName}}</h5>
+        <h5 class="card-title">Code : {{productCode}}</h5>
+        <h5 class="card-title">Price : {{productPrice}}</h5>
+        <h5 class="card-title">Seller: {{productSeller}}</h5>
+        <h5 class="card-title">Average Rating: {{averageRating}}</h5>
+        <h5 class="card-title">Total Reviews: {{totalReviews}}</h5>
+        <hr>
+    </div>
+</div>
+<br>
+<div class="card card-outline-secondary my-4" id="card-reviews">
+    <div class="card-header">
+        <h1>Reviews and Ratings</h1>
+    </div>
+    <div class="card-body">
+        <div *ngIf="!isReviewPresent; then reviewsNotPresent else reviewsPresent"></div>
+        <ng-template #reviewsNotPresent>
+            <table class="table table-sm table-hover table-bordered border-dark table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+            <h3 class="unavailable">No Reviews Yet.</h3>
+        </ng-template>
+        <ng-template #reviewsPresent>
+            <table class="table table-sm table-hover table-bordered border-dark table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let review of reviews">
+                        <td>
+                            <h3 class="rev">{{review.title}}</h3>
+                        </td>
+                        <td>
+                            <h3 class="rev">{{review.description}}</h3>
+                        </td>
+                        <td>
+                            <ng-template #t let-fill="fill">
+                                <span class="star" [class.full]="fill === 100">
+                                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                                </span>
+                            </ng-template>
+                            <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" [max]="5">
+                            </ngb-rating>
+                        </td>
+                        <td>
+                            <form [formGroup]="updateStatus">
+                                <button class="btn btn-outline-primary bg-transparent btn-sm" id="approveBtn"
+                                    (click)="approveReview(review.code)" type="submit" value="Approved">Approve</button>
+                            </form>
+                            <form [formGroup]="updateStatus">
+                                <button class="btn btn-outline-danger bg-transparent btn-sm" id="rejectBtn"
+                                    (click)="rejectReview(review.code)" value="Rejected">Reject</button>
+                            </form>
+                        </td>
+                        <td>
+                            <h3 class="rev">{{review.status}}</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </div>
+</div>

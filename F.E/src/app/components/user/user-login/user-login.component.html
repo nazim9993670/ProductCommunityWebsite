@@ -1,0 +1,38 @@
+<!-- User Login Form HTML -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto py-4 px-0">
+            <div class="login-dark">
+                <div class=".illustration">
+                    <form [formGroup]="loginForm">
+                        <h2 class="mt-4 text-center">User Login</h2> <small class="para"></small>
+                        <br>
+                        <div class="form-group"><input type="text" class="form-control" placeholder="User Name"
+                                formControlName="username" name="username" required>
+                            <div id="validate"
+                                *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+                                Username length: Min length: 5, Max length: 15
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="password" class="form-control" placeholder="Password"
+                                formControlName="password" name="password" required>
+                            <div id="validate"
+                                *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                                Password must contain more than 8 characters, 1 upper case letter, and 1 special
+                                character.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" value="login" (click)="onSubmit()">Login</button>
+
+                        <div class="row">
+                            <h6 class="text-right pt-2 mr-1">Don't have an account?</h6>
+
+                            <a routerLink="/userRegister" type="button" class="btn btn-primary"
+                                value="login">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

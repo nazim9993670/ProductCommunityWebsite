@@ -1,0 +1,96 @@
+/* Product List Page CSS */
+h6,
+h5,
+p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 18px;
+}
+
+.table {
+    width: 100%;
+    background-color: #D8F0DA;
+    opacity: 0.97;
+    background: transparent;
+    border-color: black;
+}
+
+.card {
+    opacity: 0.6;
+}
+
+.table thead {
+    color: black;
+    text-align: center;
+    width: 40%;
+    background-color: rgba(150, 145, 145, 0.815);
+    ;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.table td {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.container {
+    display: grid;
+    grid-template-columns: 220px 20px auto;
+    grid-template-rows: auto;
+}
+
+div.left {
+    grid-column-start: 1;
+    background-color: rgba(80, 75, 75, 0.505);
+    color: white;
+    margin-left: -50px;
+    margin-top: 70px;
+    margin-right: 27px;
+    height: 200px;
+}
+
+div.right {
+    grid-column-start: 3;
+}
+
+header {
+    background-color: rgba(150, 145, 145, 0.815);
+    height: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#submit {
+    margin-left: 46px;
+    background: linear-gradient(to right, rgba(45, 164, 234, 0.427) 0%, rgba(78, 146, 194, 0.482) 100%);
+    background: -webkit-linear-gradient(left, rgba(53, 156, 220, 0.461) 0%, rgba(87, 170, 208, 0.416) 100%);
+    display: block;
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+    width: 150px;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dropdown {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 195px;
+    height: 40px;
+    background-color: rgba(183, 174, 174, 0.454);
+    border-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}

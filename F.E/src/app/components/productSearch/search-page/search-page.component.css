@@ -1,0 +1,132 @@
+/* Search a Product Page for User CSS */
+.form-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+
+}
+
+.form-holder .form-content {
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+    color: black;
+
+}
+
+.form-content .form-items {
+    border: 3px;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 500px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px 9px #00000096;
+    background-color: rgba(235, 224, 224, 0.521);
+    height: 400px;
+}
+
+.form-content h3 {
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-content h3.form-title {
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-content p {
+    color: black;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.form-content label {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-content input[name=title],
+.form-content select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    font-size: medium;
+    font-weight: 300;
+    color: grey;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 38px;
+
+}
+
+.btn-primary {
+    display: inline-block;
+    width: 23%;
+    border-radius: 35px;
+    border: none;
+    margin-left: 165px;
+    color: white;
+    margin-top: 6px;
+    font-size: medium;
+    background: linear-gradient(to right, rgb(12, 12, 12) 0%, rgb(32, 31, 31) 100%);
+    background: -webkit-linear-gradient(left, rgb(14, 14, 14) 0%, rgb(35, 34, 34) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.form-content .drop-down1 .form-control {
+    font-size: medium;
+    text-align: left;
+    height: 38px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-content .drop-down2 .form-control {
+    font-size: medium;
+    text-align: left;
+    height: 38px;
+    margin-top: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
